@@ -1,0 +1,223 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "fullName": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "$2a$10$G9QY4.b57AlIwbF8Nz2S1eTk9PzM8z/HoOFY7n0l/d3xP3kFgQcWm",
+      "phone": "+1234567890",
+      "dob": "1990-01-01"
+    },
+    {
+      "id": "2",
+      "fullName": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "$2a$10$Z8U4JGVBoe/Xo9y3VkOCueWxMI2UV5q9nO.g4uV0FL5KDq1OaD6XO",
+      "phone": "+0987654321",
+      "dob": "1985-05-15"
+    },
+    {
+      "id": "3",
+      "fullName": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "$2a$10$T7y3VuhBbD7sHnS.Jeq2ROEokZ2wGbxMTaCwzOaCMzFdyC4f5B1bO",
+      "phone": "+1122334455",
+      "dob": "1992-09-10"
+    },
+    {
+      "id": "4",
+      "fullName": "Bob Brown",
+      "email": "bob.brown@example.com",
+      "password": "$2a$10$C8iF9hPQxHi3lx7vWs.7G.2ob0HRk4WgxbLZCIK3mW0kPplSrrUq.",
+      "phone": "+2233445566",
+      "dob": "1988-12-20"
+    },
+    {
+      "id": "5",
+      "fullName": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "password": "$2a$10$J0J0QkUeC0Vk2UHGglg1TOJDD/2W8hWfVYhw1sJUzxKde9TgE8K4.",
+      "phone": "+3344556677",
+      "dob": "1995-03-25"
+    },
+    {
+      "id": "49f8",
+      "fullName": "Arisha Nawaz",
+      "email": "arishanawaz2002@gmail.com",
+      "password": "11",
+      "confirmPassword": "11",
+      "phone": "0987654322",
+      "dob": "2024-07-29"
+    },
+    {
+      "id": "db9d",
+      "fullName": "fdsfd",
+      "email": "f@gmail.com",
+      "password": "11",
+      "confirmPassword": "11",
+      "phone": "rew43",
+      "dob": "2024-07-01"
+    }
+  ],
+  "employees": [
+    {
+      "id": "c3d4",
+      "name": "Carol White",
+      "role": "Frontend Developer",
+      "skills": [
+        "React",
+        "JavaScript",
+        "CSS"
+      ],
+      "availability": "8am-4pm",
+      "schedule": [
+        {
+          "day": "Monday",
+          "hours": "8am-4pm"
+        },
+        {
+          "day": "Friday",
+          "hours": "8am-4pm"
+        }
+      ]
+    },
+    {
+      "id": "d4e5",
+      "name": "David Green",
+      "role": "UX Designer",
+      "skills": [
+        "UI/UX Design",
+        "Wireframing",
+        "Prototyping"
+      ],
+      "availability": "9am-5pm",
+      "schedule": [
+        {
+          "day": "Wednesday",
+          "hours": "9am-5pm"
+        },
+        {
+          "day": "Friday",
+          "hours": "9am-5pm"
+        }
+      ]
+    },
+    {
+      "id": "e5f6",
+      "name": "Ella Blue",
+      "role": "Marketing Specialist",
+      "skills": [
+        "SEO",
+        "Content Creation",
+        "Social Media"
+      ],
+      "availability": "10am-6pm",
+      "schedule": [
+        {
+          "day": "Monday",
+          "hours": "10am-6pm"
+        },
+        {
+          "day": "Thursday",
+          "hours": "10am-6pm"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "p2b3",
+      "name": "Marketing Campaign",
+      "status": "Completed",
+      "deadline": "2024-07-25"
+    },
+    {
+      "id": "p3c4",
+      "name": "Project Arisha",
+      "status": "Completed",
+      "deadline": "2024-07-24"
+    },
+    {
+      "id": "p4d5",
+      "name": "Internal Tool Development",
+      "status": "Not Started",
+      "deadline": "2024-09-15"
+    },
+    {
+      "id": "p5e6",
+      "name": "Website Redesign",
+      "status": "Completed",
+      "deadline": "2024-08-30"
+    },
+    {
+      "id": "df7c",
+      "name": "dfsfds",
+      "status": "Not Started",
+      "deadline": "2024-07-22"
+    },
+    {
+      "id": "b147",
+      "name": "FDS",
+      "status": "Completed",
+      "deadline": "2024-08-03"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t3c4",
+      "name": "Design Mockups",
+      "status": "Ongoing",
+      "employeeId": "d4e5",
+      "projectId": "p5e6",
+      "scheduledTime": "2024-07-30T15:00:00Z",
+      "duration": "5h"
+    },
+    {
+      "id": "t4d5",
+      "name": "Content Creation",
+      "status": "Pending",
+      "employeeId": "e5f6",
+      "projectId": "p3c4",
+      "scheduledTime": "2024-07-24T11:00:00Z",
+      "duration": "2h",
+      "assignedDate": "2024-08-05",
+      "schedule": ""
+    },
+    {
+      "id": "7433",
+      "name": "Extra Assignment",
+      "status": "In Progress",
+      "employeeId": "c3d4",
+      "projectId": "p4d5",
+      "assignedDate": "2024-07-29",
+      "schedule": "2"
+    },
+    {
+      "id": "eeaf",
+      "name": "New Content Task",
+      "status": "Pending",
+      "employeeId": "e5f6",
+      "projectId": "p2b3",
+      "assignedDate": "2024-08-02",
+      "schedule": "2"
+    },
+    {
+      "id": "5b81",
+      "name": "Review Task",
+      "employeeId": "e5f6",
+      "projectId": "b147",
+      "assignedDate": "2024-07-03",
+      "schedule": "2",
+      "status": "Completed"
+    },
+    {
+      "id": "3110",
+      "name": "Final Review",
+      "employeeId": "c3d4",
+      "projectId": "df7c",
+      "assignedDate": "2024-07-30",
+      "schedule": "",
+      "status": "In Progress"
+    }
+  ]
+}
