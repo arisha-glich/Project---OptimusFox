@@ -1,89 +1,29 @@
 /* Signup.css */
 
-/* Moving lines animations */
-@keyframes moveLine {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  @keyframes moveLine2 {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
+  to {
+    opacity: 1;
   }
-  
-  .animate-line {
-    animation: moveLine 4s linear infinite;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
-  .animate-line-2 {
-    animation: moveLine2 6s linear infinite;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  /* Background image */
-  .bg-cover {
-    background-size: cover;
-  }
-  
-  .bg-center {
-    background-position: center;
-  }
-  
-  /* Logo animation */
-  .animate-bounce {
-    animation: bounce 2s infinite;
-  }
-  
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-30px);
-    }
-    60% {
-      transform: translateY(-15px);
-    }
-  }
-  
-  /* Professional color scheme */
-  .bg-gray-900 {
-    background-color: #1a202c; /* Darker gray */
-  }
-  
-  .bg-gray-800 {
-    background-color: #2d3748; /* Slightly lighter gray */
-  }
-  
-  .text-red-600 {
-    color: #e53e3e; /* Red */
-  }
-  
-  .focus:ring-red-600 {
-    --tw-ring-color: #e53e3e; /* Red */
-  }
-  
-  .border-red-600 {
-    border-color: #e53e3e; /* Red */
-  }
-  
-  /* Button hover effect */
-  .bg-red-600 {
-    background-color: #e53e3e; /* Red */
-  }
-  
-  .bg-red-700 {
-    background-color: #c53030; /* Darker red */
-  }
-  
-  .transition-colors {
-    transition: background-color 0.3s ease;
-  }
-  
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-in-out;
+}

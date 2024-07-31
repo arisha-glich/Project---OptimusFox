@@ -90,6 +90,15 @@
       "confirmPassword": "11",
       "phone": "45676789",
       "dob": "2024-06-30"
+    },
+    {
+      "id": "df5f",
+      "fullName": "Qasim Nawaz",
+      "email": "qasimnawaz123.qn@gmail.com",
+      "password": "arishamaaj",
+      "confirmPassword": "arishamaaj",
+      "phone": "03164508016",
+      "dob": "2000-08-10"
     }
   ],
   "employees": [
@@ -222,6 +231,26 @@
           "hours": "9:00 - 17:00"
         }
       ]
+    },
+    {
+      "id": "268a",
+      "name": "Arisha Nawaz",
+      "role": "FrontEnd Devolper",
+      "skills": [
+        "ReactJs"
+      ],
+      "availability": "Monday to Thursday",
+      "schedule": []
+    },
+    {
+      "id": "66a6",
+      "name": "Kashmala",
+      "role": "FrontEnd Devolper",
+      "skills": [
+        "ReactJS"
+      ],
+      "availability": "Monday to Friday",
+      "schedule": []
     }
   ],
   "projects": [
@@ -272,7 +301,7 @@
     {
       "id": "t3c4",
       "name": "Design Mockups",
-      "status": "In Progress",
+      "status": "Pending",
       "employeeId": "6a7b",
       "projectId": "p5e6",
       "scheduledTime": "2024-07-30T15:00:00Z",
@@ -436,7 +465,7 @@
     {
       "id": "t11",
       "name": "Documentation",
-      "status": "In Progress",
+      "status": "Pending",
       "employeeId": "6b7c",
       "projectId": "p4d5",
       "assignedDate": "2024-08-15",
@@ -446,7 +475,7 @@
     {
       "id": "t12",
       "name": "Deployment",
-      "status": "In Progress",
+      "status": "Pending",
       "employeeId": "6b7c",
       "projectId": "p4d5",
       "assignedDate": "2024-08-25",

@@ -1,0 +1,27 @@
+/* ProjectManager.css */
+
+.add-employee-button {
+    background-color: #862b2b;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-employee-button:hover {
+    background-color: #500e0e;
+  }
+  
+  .add-employee-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .add-employee-text {
+    margin-left: 16px;
+    color: #2e2b2b;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  

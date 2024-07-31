@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
-  // Function to get today's date in YYYY-MM-DD format
-  const getTodayDate = () => {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
-    const day = String(today.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-  };
-
   const [formState, setFormState] = useState(task || {
     name: '',
     employeeId: '',
     projectId: '',
-    assignedDate: getTodayDate(), // Set default assignedDate to today's date
+    assignedDate: '',
     deadlineDate: '',
     status: 'Pending',
   });
@@ -24,7 +15,7 @@ const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
       name: '',
       employeeId: '',
       projectId: '',
-      assignedDate: getTodayDate(), // Reset to today's date if task changes
+      assignedDate: '',
       deadlineDate: '',
       status: 'Pending',
     });
@@ -42,7 +33,7 @@ const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">{task ? 'Edit Task' : 'Add Task'}</h2>
+      <h2 className="text-xl font-bold mb-4 text-gray-800">{task ? ' Task' : ' Task'}</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-700 font-medium mb-1" htmlFor="name">Task Name</label>

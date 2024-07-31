@@ -1,24 +1,25 @@
 import React from 'react';
 import Button from '../Reusable/Button';
+import '../../styles/HomePage.css'; // Ensure the path to the CSS file is correct
 
 // Reusable Card component
 const Card = ({ title, content, footer }) => (
-  <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+  <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out card-container">
     <div className="bg-[#00356B] text-white flex items-center justify-center h-48 rounded-t-lg">
-      <div className="text-4xl font-bold">{title}</div>
+      <div className="text-4xl font-bold card-title">{title}</div>
     </div>
-    <div className="px-6 py-4">{content}</div>
-    <div className="px-6 pt-4 pb-2 flex justify-end space-x-2">{footer}</div>
+    <div className="px-6 py-4 card-content">{content}</div>
+    <div className="px-6 pt-4 pb-2 flex justify-end space-x-2 card-footer">{footer}</div>
   </div>
 );
 
 const EmployeeList = ({ employees, onEdit, onDelete }) => (
   <div className="max-w-6xl mx-auto p-6 bg-gray-100 min-h-screen">
-    <h3 className="text-4xl font-semibold mb-6  text-[#621818]">Meet Our Team</h3>
-    <p className="text-lg text-gray-700 mb-8">
+    <h3 className="text-4xl font-semibold mb-6 text-[#621818] typing-text">Meet Our Team</h3>
+    <p className="text-lg text-gray-700 mb-8 about-text">
       At OptimusFox, we pride ourselves on having a dedicated and talented team that drives our success. Our employees are our greatest asset, bringing a wealth of experience and expertise to every project. Below, you'll find an introduction to some of the key members of our team who contribute to making our company thrive.
     </p>
-    <h3 className="text-2xl font-semibold mb-6 text-[#00356B]">Employees of OPTIMUSFOX</h3>
+    <h3 className="text-2xl font-semibold mb-6 text-[#00356B] typing-text">Employees of OPTIMUSFOX</h3>
     {employees.length > 0 ? (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {employees.map(employee => (

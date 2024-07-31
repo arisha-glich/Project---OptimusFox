@@ -59,7 +59,7 @@ const TaskManager2 = () => {
             onClick={handleAddTask}
             className="py-2 px-4 rounded-lg bg-green-600 text-white"
           >
-            Add Task
+            Task
           </button>
         </div>
       </div>

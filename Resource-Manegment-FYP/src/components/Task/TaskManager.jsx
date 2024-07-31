@@ -8,6 +8,8 @@ import { useProjects } from '../../hooks/useProjects';
 import { useEmployees } from '../../hooks/useEmployees';
 import { refreshProjects } from '../../services/projectService';
 import Button from '../Reusable/Button'; // Import the Button component
+import { AiOutlineAppstore, AiOutlineUnorderedList, AiOutlineProject } from 'react-icons/ai'; // Import icons
+import { IoMdAdd } from 'react-icons/io'; // Import icons
 
 const TaskManager = () => {
   const { tasks, addTask, updateTaskById, deleteTaskById, setTasks } = useTasks();
@@ -58,29 +60,33 @@ const TaskManager = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-800">Task Manager</h1>
-        <div>
+        <div className="flex space-x-2">
           <Button
             onClick={() => setView('board')}
-            className={`py-1 px-2 mr-2 rounded-lg text-sm ${view === 'board' ? 'bg-purple-600 text-white' : 'bg-gray-300 text-gray-700'}`}
+            className={`py-2 px-4 rounded-lg text-sm flex items-center ${view === 'board' ? 'bg-purple-600 text-white' : 'bg-gray-300 text-gray-700'}`}
           >
+            <AiOutlineAppstore className="mr-2 text-xl" />
             Task Board
           </Button>
           <Button
             onClick={() => setView('list')}
-            className={`py-1 px-2 mr-2 rounded-lg text-sm ${view === 'list' ? 'bg-yellow-600 text-white' : 'bg-gray-300 text-gray-700'}`}
+            className={`py-2 px-4 rounded-lg text-sm flex items-center ${view === 'list' ? 'bg-yellow-600 text-white' : 'bg-orange-300 text-gray-700'}`}
           >
+            <AiOutlineUnorderedList className="mr-2 text-xl" />
             Task List
           </Button>
           <Button
             onClick={() => setView('project')}
-            className={`py-1 px-2 mr-2 rounded-lg text-sm ${view === 'project' ? 'bg-orange-600 text-white' : 'bg-gray-300 text-gray-700'}`}
+            className={`py-2 px-4 rounded-lg text-sm flex items-center ${view === 'project' ? 'bg-orange-600 text-white' : 'bg-orange-600 text-gray-700'}`}
           >
+            <AiOutlineProject className="mr-2 text-xl" />
             Projects
           </Button>
           <Button
             onClick={handleAddTask}
-            className="py-1 px-2 rounded-lg text-sm bg-green-600 text-white"
+            className="py-2 px-4 rounded-lg text-sm flex items-center bg-green-600 text-white"
           >
+            <IoMdAdd className="mr-2 text-xl" />
             Add Task
           </Button>
         </div>

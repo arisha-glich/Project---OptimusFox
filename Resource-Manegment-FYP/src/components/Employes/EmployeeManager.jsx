@@ -3,6 +3,7 @@ import EmployeeList from './EmployeeList';
 import EmployeeForm from './EmployeeForm';
 import Modal from '../Reusable/Modal';
 import { fetchEmployees, createEmployee, updateEmployee, deleteEmployee } from '../../services/employeeService';
+import '../../styles/ProjectManager.css';
 
 const ProjectManager = () => {
   const [employees, setEmployees] = useState([]);
@@ -50,9 +51,14 @@ const ProjectManager = () => {
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
-      <button onClick={handleAdd} className="bg-orange-500 text-white px-4 py-2 rounded-lg mb-6">
-        Add Employee
-      </button>
+      <div className="add-employee-container">
+        <button onClick={handleAdd} className="add-employee-button">
+          Add Employee
+        </button>
+        <p className="add-employee-text">
+          Adding new employees is essential for expanding your team's capabilities and ensuring that all projects are adequately staffed with the right skills.
+        </p>
+      </div>
       <EmployeeList employees={employees} onEdit={handleEdit} onDelete={handleDelete} />
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <EmployeeForm

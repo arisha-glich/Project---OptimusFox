@@ -1,9 +1,8 @@
-// src/components/TaskList.js
-import React from 'react';
+import React, { useState } from 'react';
 import { useSearch } from '../../context/SearchContext';
 
 const TaskList = ({ tasks, employees, projects, onEdit, onDelete }) => {
-  const { searchQuery } = useSearch();
+  const { searchQuery, setSearchQuery } = useSearch();
 
   // Create lookup maps for employees and projects
   const employeeMap = employees.reduce((map, emp) => {
@@ -22,7 +21,7 @@ const TaskList = ({ tasks, employees, projects, onEdit, onDelete }) => {
   );
 
   // Pagination state
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const tasksPerPage = 5; // Number of tasks per page
   const totalTasks = filteredTasks.length;
   const totalPages = Math.ceil(totalTasks / tasksPerPage);
@@ -40,6 +39,15 @@ const TaskList = ({ tasks, employees, projects, onEdit, onDelete }) => {
 
   return (
     <div className="overflow-x-auto p-6 bg-gray-50 min-h-screen">
+      <div className="mb-4 flex items-center space-x-4">
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="px-4 py-2 border border-gray-300 rounded-lg w-full max-w-xs"
+        />
+      </div>
       <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
         <thead className="bg-gray-100">
           <tr>
@@ -76,7 +84,7 @@ const TaskList = ({ tasks, employees, projects, onEdit, onDelete }) => {
                     </button>
                     <button
                       onClick={() => onDelete(task.id)}
-                      className="py-1 px-3 bg-green-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                      className="py-1 px-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
                       aria-label={`Delete task ${task.name}`}
                     >
                       Delete
@@ -106,7 +114,7 @@ const TaskList = ({ tasks, employees, projects, onEdit, onDelete }) => {
                   onClick={() => handlePageChange(page + 1)}
                   className={`px-3 py-1 rounded ${
                     page + 1 === currentPage
-                      ? 'bg-green-700 text-white  hover:bg-gray-600'
+                      ? 'bg-green-700 text-white hover:bg-gray-600'
                       : 'bg-green-700 text-gray-200 hover:bg-gray-600'
                   }`}
                 >
