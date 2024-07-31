@@ -1,4 +1,4 @@
-AUTHENTICATION
+AUTHENTICATION with auth provider
 LOGOUT FUNCTIONLITY
 About Pages ( Start on Started Button when Homepage appears)
 EMPLOYESS: CRUD
@@ -6,6 +6,6 @@ PROJECT : CRUD
 TASK : CRUD
 TASK MANEGMENT 
 1. board view with drag and drop with infinity scroll( after 6 again fetch from api)
-2. List view( pagination and also search feature)
+2. List view( pagination and also search feature with search context)
 3. Project view(All the projects with task )
 CHARTS OF PROJECT(finished or left)
