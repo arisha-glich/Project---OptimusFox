@@ -1,106 +1,138 @@
 import React, { useState, useEffect } from 'react';
 
 const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
-  const [name, setName] = useState(task.name);
-  const [employeeId, setEmployeeId] = useState(task.employeeId);
-  const [projectId, setProjectId] = useState(task.projectId || '');
-  const [assignedDate, setAssignedDate] = useState(task.assignedDate || '');
-  const [schedule, setSchedule] = useState(task.schedule || '');
+  // Function to get today's date in YYYY-MM-DD format
+  const getTodayDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const [formState, setFormState] = useState(task || {
+    name: '',
+    employeeId: '',
+    projectId: '',
+    assignedDate: getTodayDate(), // Set default assignedDate to today's date
+    deadlineDate: '',
+    status: 'Pending',
+  });
 
   useEffect(() => {
-    setName(task.name);
-    setEmployeeId(task.employeeId);
-    setProjectId(task.projectId || '');
-    setAssignedDate(task.assignedDate || '');
-    setSchedule(task.schedule || '');
+    setFormState(task || {
+      name: '',
+      employeeId: '',
+      projectId: '',
+      assignedDate: getTodayDate(), // Reset to today's date if task changes
+      deadlineDate: '',
+      status: 'Pending',
+    });
   }, [task]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSave({
-      ...task,
-      name,
-      employeeId,
-      projectId,
-      assignedDate,
-      schedule,
-    });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSave(formState);
   };
 
   return (
-    <div className="modal">
-      <form onSubmit={handleSubmit} className="p-4 bg-white rounded shadow-md">
-        <h2 className="text-lg font-bold mb-4">{task.id ? 'Edit Task' : 'Add Task'}</h2>
-        <div className="mb-2">
-          <label className="block text-sm font-semibold">Task Name</label>
+    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+      <h2 className="text-xl font-bold mb-4 text-gray-800">{task ? 'Edit Task' : 'Add Task'}</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-1" htmlFor="name">Task Name</label>
           <input
+            id="name"
+            name="name"
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="p-2 border rounded w-full"
+            value={formState.name}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-lg"
             required
           />
         </div>
-        <div className="mb-2">
-          <label className="block text-sm font-semibold">Assigned Employee</label>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-1" htmlFor="employeeId">Employee</label>
           <select
-            value={employeeId}
-            onChange={(e) => setEmployeeId(e.target.value)}
-            className="p-2 border rounded w-full"
-            required
+            id="employeeId"
+            name="employeeId"
+            value={formState.employeeId}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-lg"
           >
-            <option value="">Select an employee</option>
-            {employees.map((employee) => (
-              <option key={employee.id} value={employee.id}>
-                {employee.name}
-              </option>
+            <option value="">Select Employee</option>
+            {employees.map((emp) => (
+              <option key={emp.id} value={emp.id}>{emp.name}</option>
             ))}
           </select>
         </div>
-        <div className="mb-2">
-          <label className="block text-sm font-semibold">Project</label>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-1" htmlFor="projectId">Project</label>
           <select
-            value={projectId}
-            onChange={(e) => setProjectId(e.target.value)}
-            className="p-2 border rounded w-full"
+            id="projectId"
+            name="projectId"
+            value={formState.projectId}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-lg"
           >
-            <option value="">Select a project</option>
-            {projects.map((project) => (
-              <option key={project.id} value={project.id}>
-                {project.name}
-              </option>
+            <option value="">Select Project</option>
+            {projects.map((proj) => (
+              <option key={proj.id} value={proj.id}>{proj.name}</option>
             ))}
           </select>
         </div>
-        <div className="mb-2">
-          <label className="block text-sm font-semibold">Assigned Date</label>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-1" htmlFor="assignedDate">Assigned Date</label>
           <input
+            id="assignedDate"
+            name="assignedDate"
             type="date"
-            value={assignedDate}
-            onChange={(e) => setAssignedDate(e.target.value)}
-            className="p-2 border rounded w-full"
+            value={formState.assignedDate}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-lg"
           />
         </div>
-        <div className="mb-2">
-          <label className="block text-sm font-semibold">Schedule</label>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-1" htmlFor="deadlineDate">Deadline Date</label>
           <input
-            type="text"
-            value={schedule}
-            onChange={(e) => setSchedule(e.target.value)}
-            className="p-2 border rounded w-full"
+            id="deadlineDate"
+            name="deadlineDate"
+            type="date"
+            value={formState.deadlineDate}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-lg"
           />
         </div>
-        <div className="flex space-x-2">
+        <div className="mb-4">
+          <label className="block text-gray-700 font-medium mb-1" htmlFor="status">Status</label>
+          <select
+            id="status"
+            name="status"
+            value={formState.status}
+            onChange={handleChange}
+            className="w-full p-2 border border-gray-300 rounded-lg"
+          >
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+        <div className="flex justify-end space-x-4">
           <button
             type="submit"
-            className="py-2 px-4 bg-blue-500 text-white rounded"
+            className="py-2 px-4 bg-blue-600 text-white rounded-lg"
           >
             Save
           </button>
           <button
             type="button"
             onClick={onCancel}
-            className="py-2 px-4 bg-gray-500 text-white rounded"
+            className="py-2 px-4 bg-gray-300 text-gray-700 rounded-lg"
           >
             Cancel
           </button>

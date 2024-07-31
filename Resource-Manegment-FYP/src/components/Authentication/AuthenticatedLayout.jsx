@@ -8,11 +8,11 @@ const AuthenticatedLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="flex flex-1">
-        <SideMenu />
-        <div className="flex-1 p-4">
+      <div className="flex flex-1 overflow-hidden">
+        <SideMenu className="hidden lg:block w-64 bg-gray-800 text-white" />
+        <main className="flex-1 overflow-y-auto p-4 bg-gray-10">
           <Outlet />
-        </div>
+        </main>
       </div>
       <Footer />
     </div>

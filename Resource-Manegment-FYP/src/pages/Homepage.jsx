@@ -11,7 +11,7 @@ const HomePage = () => {
           <p className="text-lg md:text-2xl mb-6">Manage projects, track tasks, and streamline your workflow effortlessly.</p>
           <Link
             to="/projects"
-            className="bg-blue-500 text-white py-2 px-6 rounded shadow hover:bg-blue-600 transition"
+            className="bg-red-500 text-white py-2 px-6 rounded shadow hover:bg-blue-600 transition"
           >
             Get Started
           </Link>
@@ -64,7 +64,7 @@ const HomePage = () => {
           <p className="text-lg mb-6">Sign up today and start optimizing your resources with our powerful application.</p>
           <Link
             to="/projects"
-            className="bg-blue-500 text-white py-2 px-6 rounded shadow hover:bg-blue-600 transition"
+            className="bg-red-500 text-white py-2 px-6 rounded shadow hover:bg-blue-600 transition"
           >
             Get Started
           </Link>

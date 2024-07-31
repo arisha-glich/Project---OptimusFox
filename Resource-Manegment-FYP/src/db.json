@@ -12,7 +12,7 @@
       "id": "2",
       "fullName": "Jane Smith",
       "email": "jane.smith@example.com",
-      "password": "$2a$10$Z8U4JGVBoe/Xo9y3VkOCueWxMI2UV5q9nO.g4uV0FL5KDq1OaD6XO",
+      "password": "11",
       "phone": "+0987654321",
       "dob": "1985-05-15"
     },
@@ -57,80 +57,174 @@
       "confirmPassword": "11",
       "phone": "rew43",
       "dob": "2024-07-01"
+    },
+    {
+      "id": "6",
+      "fullName": "Michael Brown",
+      "email": "michael.brown@example.com",
+      "password": "$2a$10$U8F7Z9P4N7lE1ChP4M1eJ.zHW9rZ/.kNNfiTT5PjG4KM8/7LO05cG",
+      "phone": "+5566778899",
+      "dob": "1989-11-11"
+    },
+    {
+      "id": "7",
+      "fullName": "Sarah Wilson",
+      "email": "sarah.wilson@example.com",
+      "password": "$2a$10$E5kC5M8W1q/Tl7Wm7k9Qu.t3K5PWE9eZ.m/AYIKSzY8Pz.v1P5OPK",
+      "phone": "+6677889900",
+      "dob": "1991-03-20"
+    },
+    {
+      "id": "8",
+      "fullName": "James Taylor",
+      "email": "james.taylor@example.com",
+      "password": "$2a$10$YcKzG/oH5s1ZPTpj4X5NTe8T4t6d0tCT/Yu3Omd4fGyOEHHDy1ZiS",
+      "phone": "+7788990011",
+      "dob": "1987-07-07"
+    },
+    {
+      "id": "0f7c",
+      "fullName": "Arisha Nawaz",
+      "email": "arishanawaz2002@gmail.com",
+      "password": "11",
+      "confirmPassword": "11",
+      "phone": "45676789",
+      "dob": "2024-06-30"
     }
   ],
   "employees": [
     {
-      "id": "c3d4",
-      "name": "Carol White",
-      "role": "Frontend Developer",
+      "id": "276d",
+      "name": "SDFJLK",
+      "role": "JDLFSJLJK",
       "skills": [
-        "React",
-        "JavaScript",
-        "CSS"
+        "JKDSJFLKSJFKDJ"
       ],
-      "availability": "8am-4pm",
+      "availability": "Monday to Friday",
       "schedule": [
         {
-          "day": "Monday",
-          "hours": "8am-4pm"
-        },
-        {
-          "day": "Friday",
-          "hours": "8am-4pm"
+          "0": "s",
+          "day": "",
+          "hours": ""
         }
       ]
     },
     {
-      "id": "d4e5",
-      "name": "David Green",
-      "role": "UX Designer",
+      "id": "6a7b",
+      "name": "Jessica White",
+      "role": "UI/UX Designer",
       "skills": [
-        "UI/UX Design",
-        "Wireframing",
-        "Prototyping"
+        "Figma",
+        "Sketch",
+        "Adobe XD"
       ],
-      "availability": "9am-5pm",
+      "availability": "Monday to Friday",
       "schedule": [
         {
+          "0": "8",
+          "day": "Monday",
+          "hours": "9:00 - 17:00"
+        },
+        {
+          "0": "8",
+          "day": "Tuesday",
+          "hours": "9:00 - 17:00"
+        },
+        {
+          "0": "8",
           "day": "Wednesday",
-          "hours": "9am-5pm"
+          "hours": "9:00 - 17:00"
         },
         {
+          "0": "8",
+          "day": "Thursday",
+          "hours": "9:00 - 17:00"
+        },
+        {
+          "0": "8",
           "day": "Friday",
-          "hours": "9am-5pm"
+          "hours": "9:00 - 17:00"
         }
       ]
     },
     {
-      "id": "e5f6",
-      "name": "Ella Blue",
-      "role": "Marketing Specialist",
+      "id": "6b7c",
+      "name": "David Lee",
+      "role": "Backend Developer",
       "skills": [
-        "SEO",
-        "Content Creation",
-        "Social Media"
+        "Node.js",
+        "Express",
+        "MongoDB"
       ],
-      "availability": "10am-6pm",
+      "availability": "Monday to Friday",
       "schedule": [
         {
+          "0": "8",
           "day": "Monday",
-          "hours": "10am-6pm"
+          "hours": "10:00 - 18:00"
         },
         {
+          "0": "8",
+          "day": "Tuesday",
+          "hours": "10:00 - 18:00"
+        },
+        {
+          "0": "8",
+          "day": "Wednesday",
+          "hours": "10:00 - 18:00"
+        },
+        {
+          "0": "8",
           "day": "Thursday",
-          "hours": "10am-6pm"
+          "hours": "10:00 - 18:00"
+        },
+        {
+          "0": "8",
+          "day": "Friday",
+          "hours": "10:00 - 18:00"
+        }
+      ]
+    },
+    {
+      "id": "6c8d",
+      "name": "Laura Martinez",
+      "role": "Project Manager",
+      "skills": [
+        "Agile",
+        "Scrum",
+        "Kanban"
+      ],
+      "availability": "Monday to Friday",
+      "schedule": [
+        {
+          "0": "8",
+          "day": "Monday",
+          "hours": "9:00 - 17:00"
+        },
+        {
+          "0": "8",
+          "day": "Tuesday",
+          "hours": "9:00 - 17:00"
+        },
+        {
+          "0": "8",
+          "day": "Wednesday",
+          "hours": "9:00 - 17:00"
+        },
+        {
+          "0": "8",
+          "day": "Thursday",
+          "hours": "9:00 - 17:00"
+        },
+        {
+          "0": "8",
+          "day": "Friday",
+          "hours": "9:00 - 17:00"
         }
       ]
     }
   ],
   "projects": [
-    {
-      "id": "p2b3",
-      "name": "Marketing Campaign",
-      "status": "Completed",
-      "deadline": "2024-07-25"
-    },
     {
       "id": "p3c4",
       "name": "Project Arisha",
@@ -151,73 +245,283 @@
     },
     {
       "id": "df7c",
-      "name": "dfsfds",
+      "name": "Internal Systems Upgrade",
       "status": "Not Started",
       "deadline": "2024-07-22"
     },
     {
       "id": "b147",
-      "name": "FDS",
+      "name": "Marketing Campaign",
       "status": "Completed",
       "deadline": "2024-08-03"
+    },
+    {
+      "id": "90b4",
+      "name": "Product Launch",
+      "status": "Completed",
+      "deadline": "2024-08-10"
+    },
+    {
+      "id": "daca",
+      "name": "User Feedback Analysis",
+      "status": "Pending",
+      "deadline": "2024-08-02"
     }
   ],
   "tasks": [
     {
       "id": "t3c4",
       "name": "Design Mockups",
-      "status": "Ongoing",
-      "employeeId": "d4e5",
+      "status": "In Progress",
+      "employeeId": "6a7b",
       "projectId": "p5e6",
       "scheduledTime": "2024-07-30T15:00:00Z",
-      "duration": "5h"
+      "duration": "5h",
+      "assignedDate": "2024-07-15",
+      "schedule": "Daily",
+      "deadlineDate": "2024-08-31"
     },
     {
       "id": "t4d5",
       "name": "Content Creation",
       "status": "Pending",
-      "employeeId": "e5f6",
-      "projectId": "p3c4",
+      "employeeId": "6b7c",
+      "projectId": "p4d5",
       "scheduledTime": "2024-07-24T11:00:00Z",
       "duration": "2h",
-      "assignedDate": "2024-08-05",
-      "schedule": ""
+      "assignedDate": "2024-07-20",
+      "schedule": "Weekly",
+      "deadlineDate": "2024-08-03"
     },
     {
       "id": "7433",
       "name": "Extra Assignment",
-      "status": "In Progress",
-      "employeeId": "c3d4",
+      "status": "Pending",
+      "employeeId": "6a7b",
       "projectId": "p4d5",
       "assignedDate": "2024-07-29",
-      "schedule": "2"
+      "schedule": "Once",
+      "deadlineDate": "2024-08-28"
     },
     {
       "id": "eeaf",
       "name": "New Content Task",
-      "status": "Pending",
-      "employeeId": "e5f6",
-      "projectId": "p2b3",
-      "assignedDate": "2024-08-02",
-      "schedule": "2"
+      "status": "Completed",
+      "employeeId": "6a7b",
+      "projectId": "p3c4",
+      "assignedDate": "2024-07-25",
+      "schedule": "One-time",
+      "deadlineDate": "2024-07-30"
     },
     {
       "id": "5b81",
       "name": "Review Task",
-      "employeeId": "e5f6",
+      "status": "Pending",
+      "employeeId": "6c8d",
       "projectId": "b147",
       "assignedDate": "2024-07-03",
-      "schedule": "2",
-      "status": "Completed"
+      "schedule": "Once",
+      "deadlineDate": "2024-08-10"
     },
     {
       "id": "3110",
       "name": "Final Review",
-      "employeeId": "c3d4",
+      "status": "Pending",
+      "employeeId": "6c8d",
       "projectId": "df7c",
       "assignedDate": "2024-07-30",
+      "schedule": "One-time",
+      "deadlineDate": "2024-08-03"
+    },
+    {
+      "id": "t1",
+      "name": "Initial Research",
+      "status": "Completed",
+      "employeeId": "6a7b",
+      "projectId": "p3c4",
+      "assignedDate": "2024-07-01",
+      "schedule": "One-time",
+      "deadlineDate": "2024-07-10"
+    },
+    {
+      "id": "t2",
+      "name": "Wireframes Design",
+      "status": "Completed",
+      "employeeId": "6a7b",
+      "projectId": "p3c4",
+      "assignedDate": "2024-07-02",
+      "schedule": "One-time",
+      "deadlineDate": "2024-07-12"
+    },
+    {
+      "id": "t3",
+      "name": "Prototype Development",
+      "status": "Completed",
+      "employeeId": "6b7c",
+      "projectId": "p3c4",
+      "assignedDate": "2024-07-03",
+      "schedule": "Once",
+      "deadlineDate": "2024-07-15"
+    },
+    {
+      "id": "t4",
+      "name": "Usability Testing",
+      "status": "Completed",
+      "employeeId": "6b7c",
+      "projectId": "p3c4",
+      "assignedDate": "2024-07-05",
+      "schedule": "One-time",
+      "deadlineDate": "2024-07-20"
+    },
+    {
+      "id": "t5",
+      "name": "Feedback Analysis",
+      "status": "Completed",
+      "employeeId": "6a7b",
+      "projectId": "p3c4",
+      "assignedDate": "2024-07-10",
+      "schedule": "One-time",
+      "deadlineDate": "2024-07-25"
+    },
+    {
+      "id": "t6",
+      "name": "Final Presentation",
+      "status": "Completed",
+      "employeeId": "6b7c",
+      "projectId": "p3c4",
+      "assignedDate": "2024-07-20",
+      "schedule": "Once",
+      "deadlineDate": "2024-07-30"
+    },
+    {
+      "id": "t7",
+      "name": "Requirement Gathering",
+      "status": "Completed",
+      "employeeId": "6b7c",
+      "projectId": "p4d5",
+      "assignedDate": "2024-07-01",
+      "schedule": "One-time",
+      "deadlineDate": "2024-07-10"
+    },
+    {
+      "id": "t8",
+      "name": "System Design",
+      "status": "Completed",
+      "employeeId": "6b7c",
+      "projectId": "p4d5",
+      "assignedDate": "2024-07-05",
+      "schedule": "One-time",
+      "deadlineDate": "2024-07-15"
+    },
+    {
+      "id": "t9",
+      "name": "Implementation",
+      "status": "Pending",
+      "employeeId": "6a7b",
+      "projectId": "p4d5",
+      "assignedDate": "2024-07-10",
+      "schedule": "Daily",
+      "deadlineDate": "2024-08-01"
+    },
+    {
+      "id": "t10",
+      "name": "Testing & QA",
+      "status": "Pending",
+      "employeeId": "6a7b",
+      "projectId": "p4d5",
+      "assignedDate": "2024-08-01",
+      "schedule": "Weekly",
+      "deadlineDate": "2024-08-15"
+    },
+    {
+      "id": "t11",
+      "name": "Documentation",
+      "status": "In Progress",
+      "employeeId": "6b7c",
+      "projectId": "p4d5",
+      "assignedDate": "2024-08-15",
+      "schedule": "One-time",
+      "deadlineDate": "2024-08-25"
+    },
+    {
+      "id": "t12",
+      "name": "Deployment",
+      "status": "In Progress",
+      "employeeId": "6b7c",
+      "projectId": "p4d5",
+      "assignedDate": "2024-08-25",
+      "schedule": "One-time",
+      "deadlineDate": "2024-09-01"
+    },
+    {
+      "id": "t13",
+      "name": "Design Wireframes",
+      "status": "In Progress",
+      "employeeId": "6a7b",
+      "projectId": "p5e6",
+      "assignedDate": "2024-07-01",
+      "schedule": "One-time",
+      "deadlineDate": "2024-07-10"
+    },
+    {
+      "id": "t14",
+      "name": "UI Design",
+      "status": "Pending",
+      "employeeId": "6b7c",
+      "projectId": "p5e6",
+      "assignedDate": "2024-07-10",
+      "schedule": "Daily",
+      "deadlineDate": "2024-07-20"
+    },
+    {
+      "id": "t15",
+      "name": "Frontend Development",
+      "status": "Completed",
+      "employeeId": "6b7c",
+      "projectId": "p5e6",
+      "assignedDate": "2024-07-20",
+      "schedule": "Weekly",
+      "deadlineDate": "2024-08-05"
+    },
+    {
+      "id": "t16",
+      "name": "Backend Integration",
+      "status": "In Progress",
+      "employeeId": "6a7b",
+      "projectId": "p5e6",
+      "assignedDate": "2024-08-01",
+      "schedule": "Weekly",
+      "deadlineDate": "2024-08-15"
+    },
+    {
+      "id": "t17",
+      "name": "User Testing",
+      "status": "Pending",
+      "employeeId": "6b7c",
+      "projectId": "p5e6",
+      "assignedDate": "2024-08-15",
+      "schedule": "One-time",
+      "deadlineDate": "2024-08-22"
+    },
+    {
+      "id": "t18",
+      "name": "Final Adjustments",
+      "status": "In Progress",
+      "employeeId": "6a7b",
+      "projectId": "p5e6",
+      "assignedDate": "2024-08-22",
+      "schedule": "One-time",
+      "deadlineDate": "2024-08-30"
+    },
+    {
+      "id": "1363",
+      "name": "Login Page",
+      "employeeId": "6a7b",
+      "projectId": "p4d5",
+      "assignedDate": "2024-07-30",
       "schedule": "",
-      "status": "In Progress"
+      "status": "Pending",
+      "deadlineDate": "2024-08-09"
     }
   ]
 }

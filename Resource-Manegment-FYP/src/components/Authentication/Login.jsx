@@ -53,6 +53,10 @@ const Login = () => {
     }
   };
 
+  const handleSignupRedirect = () => {
+    navigate('/signup'); // Redirect to the signup page
+  };
+
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-black p-4 overflow-hidden" style={{ backgroundImage: `url(${background})` }}>
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60">
@@ -64,8 +68,9 @@ const Login = () => {
       <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-lg w-full z-10 relative transition-transform transform hover:scale-105 duration-300">
         <div className="text-center mb-6">
           <img src={logo} alt="Company Logo" className="w-24 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-white">Welcome to Our Company</h1>
-          <p className="text-gray-400 mt-2">Empowering innovation and excellence</p>
+          <h2 className="text-3xl font-semibold mb-6 text-red-600">OptimusFox ResourceRover</h2>
+          <h1 className="text-2xl font-bold text-white">Welcome Back!</h1>
+          <p className="text-gray-400 mt-2">Please log in to continue accessing your account and our services.</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="form-group">
@@ -95,6 +100,14 @@ const Login = () => {
           {loginError && <p className="text-red-500 text-sm mt-1">{loginError}</p>}
           <Button type="submit" variant="primary" className="w-full bg-red-600 hover:bg-red-700 transition-colors duration-300">Sign In</Button>
         </form>
+        <p className="text-gray-400 mt-4 text-center">
+          Don't have an account? 
+          <button 
+            onClick={handleSignupRedirect} 
+            className="text-red-600 hover:text-red-700 font-semibold ml-1">
+            Sign Up
+          </button>
+        </p>
       </div>
     </div>
   );

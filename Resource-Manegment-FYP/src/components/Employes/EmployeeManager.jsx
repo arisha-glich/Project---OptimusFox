@@ -49,12 +49,14 @@ const ProjectManager = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleAdd} className="bg-blue-500 text-white px-4 py-2 rounded-lg">Add Employee</button>
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <button onClick={handleAdd} className="bg-orange-500 text-white px-4 py-2 rounded-lg mb-6">
+        Add Employee
+      </button>
       <EmployeeList employees={employees} onEdit={handleEdit} onDelete={handleDelete} />
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <EmployeeForm
-          employee={selectedEmployee || { name: '', role: '', skills: [], availability: '', schedule: [] }}
+          employee={selectedEmployee || { name: '', role: '', skills: [], availability: '' }}
           onSave={handleSave}
           onCancel={handleCloseModal}
         />

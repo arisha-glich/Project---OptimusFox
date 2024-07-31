@@ -7,6 +7,7 @@ import { useTasks } from '../../hooks/useTasks';
 import { useProjects } from '../../hooks/useProjects';
 import { useEmployees } from '../../hooks/useEmployees';
 import { refreshProjects } from '../../services/projectService';
+import Button from '../Reusable/Button'; // Import the Button component
 
 const TaskManager = () => {
   const { tasks, addTask, updateTaskById, deleteTaskById, setTasks } = useTasks();
@@ -19,7 +20,7 @@ const TaskManager = () => {
   useEffect(() => {
     const fetchProjectsData = async () => {
       try {
-        const refreshedProjects = await refreshProjects(); // Ensure refreshProjects is defined or imported
+        const refreshedProjects = await refreshProjects();
         setProjects(refreshedProjects);
       } catch (error) {
         console.error('Error fetching projects on mount:', error);
@@ -55,33 +56,33 @@ const TaskManager = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-xl font-bold">Task Manager</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold text-gray-800">Task Manager</h1>
         <div>
-          <button
+          <Button
             onClick={() => setView('board')}
-            className={`py-2 px-4 mr-2 ${view === 'board' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`py-1 px-2 mr-2 rounded-lg text-sm ${view === 'board' ? 'bg-purple-600 text-white' : 'bg-gray-300 text-gray-700'}`}
           >
-            Board View
-          </button>
-          <button
+            Task Board
+          </Button>
+          <Button
             onClick={() => setView('list')}
-            className={`py-2 px-4 mr-2 ${view === 'list' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`py-1 px-2 mr-2 rounded-lg text-sm ${view === 'list' ? 'bg-yellow-600 text-white' : 'bg-gray-300 text-gray-700'}`}
           >
-            List View
-          </button>
-          <button
+            Task List
+          </Button>
+          <Button
             onClick={() => setView('project')}
-            className={`py-2 px-4 mr-2 ${view === 'project' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`py-1 px-2 mr-2 rounded-lg text-sm ${view === 'project' ? 'bg-orange-600 text-white' : 'bg-gray-300 text-gray-700'}`}
           >
-            Project View
-          </button>
-          <button
+            Projects
+          </Button>
+          <Button
             onClick={handleAddTask}
-            className="py-2 px-4 bg-green-500 text-white"
+            className="py-1 px-2 rounded-lg text-sm bg-green-600 text-white"
           >
             Add Task
-          </button>
+          </Button>
         </div>
       </div>
 
