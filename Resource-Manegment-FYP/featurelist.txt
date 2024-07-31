@@ -1,11 +1,36 @@
-AUTHENTICATION with auth provider
-LOGOUT FUNCTIONLITY
-About Pages ( Start on Started Button when Homepage appears)
-EMPLOYESS: CRUD
-PROJECT : CRUD 
-TASK : CRUD
-TASK MANEGMENT 
-1. board view with drag and drop with infinity scroll( after 6 again fetch from api)
-2. List view( pagination and also search feature with search context)
-3. Project view(All the projects with task )
-CHARTS OF PROJECT(finished or left)
+- **Authentication with Auth Provider**
+  - Integration with auth provider
+  - User login/registration
+  - Secure routes
+  - User context
+
+- **Logout Functionality**
+  - Logout button
+  - Clear auth state
+  - Redirect to login page
+
+- **About Page**
+  - Navigation link
+  - Page content
+  - "Start" button on homepage
+
+- **Employees: CRUD**
+
+- **Projects: CRUD*
+
+- **Tasks: CRUD**
+
+- **Task Management**
+  1. Board view
+     - Drag and drop
+     - Infinite scroll (fetch after 6 tasks)
+  2. List view
+     - Pagination
+     - Search feature
+  3. Project view
+     - Display all projects
+     - Show tasks by project
+
+- **Charts of Project**
+  - Project status charts
+  - Tasks completion charts
