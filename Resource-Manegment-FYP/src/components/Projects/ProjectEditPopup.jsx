@@ -46,8 +46,8 @@ const ProjectEditPopup = ({ project, onClose, onSave }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-6 rounded shadow-lg max-w-sm w-full">
-        <h2 className="text-xl font-semibold mb-4">Edit Project</h2>
+      <div className="bg-white dark:bg-darkblue p-6 rounded shadow-lg max-w-sm w-full">
+        <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Edit Project</h2>
         {error && <p className="text-red-600 mb-4">{error}</p>}
         <label className="block mb-2">
           Name
@@ -56,7 +56,7 @@ const ProjectEditPopup = ({ project, onClose, onSave }) => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border border-gray-300 rounded"
+            className="w-full mt-1 p-2 border border-gray-300 rounded dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
           />
         </label>
         <label className="block mb-2">
@@ -65,7 +65,7 @@ const ProjectEditPopup = ({ project, onClose, onSave }) => {
             name="status"
             value={formData.status}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border border-gray-300 rounded"
+            className="w-full mt-1 p-2 border border-gray-300 rounded dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
           >
             <option value="">Select Status</option>
             {statusOptions.map(status => (
@@ -82,7 +82,7 @@ const ProjectEditPopup = ({ project, onClose, onSave }) => {
             name="deadline"
             value={formData.deadline}
             onChange={handleChange}
-            className="w-full mt-1 p-2 border border-gray-300 rounded"
+            className="w-full mt-1 p-2 border border-gray-300 rounded dark:border-gray-600 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100"
           />
         </label>
         <div className="flex space-x-2">

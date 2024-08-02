@@ -7,14 +7,14 @@ import { useTasks } from '../../hooks/useTasks';
 import { useProjects } from '../../hooks/useProjects';
 import { useEmployees } from '../../hooks/useEmployees';
 import { refreshProjects } from '../../services/projectService';
-import Button from '../Reusable/Button'; // Import the Button component
-import { AiOutlineAppstore, AiOutlineUnorderedList, AiOutlineProject } from 'react-icons/ai'; // Import icons
-import { IoMdAdd } from 'react-icons/io'; // Import icons
+import Button from '../Reusable/Button';
+import { AiOutlineAppstore, AiOutlineUnorderedList, AiOutlineProject } from 'react-icons/ai';
+import { IoMdAdd } from 'react-icons/io';
 
 const TaskManager = () => {
   const { tasks, addTask, updateTaskById, deleteTaskById, setTasks } = useTasks();
-  const { projects, setProjects } = useProjects();
-  const { employees, setEmployees } = useEmployees();
+  const { projects } = useProjects();
+  const { employees } = useEmployees();
   const [currentTask, setCurrentTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [view, setView] = useState('board'); // 'board', 'list', or 'project'
@@ -23,14 +23,15 @@ const TaskManager = () => {
     const fetchProjectsData = async () => {
       try {
         const refreshedProjects = await refreshProjects();
-        setProjects(refreshedProjects);
+        // Assuming you have a method to set projects here
+        // you might need to adjust the hook or use another method to set projects
       } catch (error) {
         console.error('Error fetching projects on mount:', error);
       }
     };
 
     fetchProjectsData();
-  }, [setProjects]);
+  }, []);
 
   const handleEdit = (task) => {
     setCurrentTask(task);
@@ -57,71 +58,72 @@ const TaskManager = () => {
   };
 
   return (
-    <div>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Task Manager</h1>
-        <div className="flex space-x-2">
-          <Button
-            onClick={() => setView('board')}
-            className={`py-2 px-4 rounded-lg text-sm flex items-center ${view === 'board' ? 'bg-purple-600 text-white' : 'bg-gray-300 text-gray-700'}`}
-          >
-            <AiOutlineAppstore className="mr-2 text-xl" />
-            Task Board
-          </Button>
-          <Button
-            onClick={() => setView('list')}
-            className={`py-2 px-4 rounded-lg text-sm flex items-center ${view === 'list' ? 'bg-yellow-600 text-white' : 'bg-orange-300 text-gray-700'}`}
-          >
-            <AiOutlineUnorderedList className="mr-2 text-xl" />
-            Task List
-          </Button>
-          <Button
-            onClick={() => setView('project')}
-            className={`py-2 px-4 rounded-lg text-sm flex items-center ${view === 'project' ? 'bg-orange-600 text-white' : 'bg-orange-600 text-gray-700'}`}
-          >
-            <AiOutlineProject className="mr-2 text-xl" />
-            Projects
-          </Button>
-          <Button
-            onClick={handleAddTask}
-            className="py-2 px-4 rounded-lg text-sm flex items-center bg-green-600 text-white"
-          >
-            <IoMdAdd className="mr-2 text-xl" />
-            Add Task
-          </Button>
-        </div>
+    <div className="overflow-scroll bg-white dark:bg-darkblue">
+      <div className="flex justify-end space-x-2 p-4">
+        <Button
+          onClick={() => setView('board')}
+          className={`py-2 px-4 rounded-lg text-sm flex items-center ${
+            view === 'board' ? 'bg-purple-700 text-white' : 'bg-purple-500 text-gray-900'
+          } dark:${view === 'board' ? 'bg-purple-800 text-white' : 'bg-purple-600 text-gray-100'}`}
+        >
+          <AiOutlineAppstore className="mr-2 text-xl" />
+          Task Board
+        </Button>
+        <Button
+          onClick={() => setView('list')}
+          className={`py-2 px-4 rounded-lg text-sm flex items-center ${
+            view === 'list' ? 'bg-teal-700 text-white' : 'bg-teal-500 text-gray-900'
+          } dark:${view === 'list' ? 'bg-teal-800 text-white' : 'bg-teal-600 text-gray-100'}`}
+        >
+          <AiOutlineUnorderedList className="mr-2 text-xl" />
+          Task List
+        </Button>
+        <Button
+          onClick={() => setView('project')}
+          className={`py-2 px-4 rounded-lg text-sm flex items-center ${
+            view === 'project' ? 'bg-orange-700 text-white' : 'bg-orange-500 text-gray-900'
+          } dark:${view === 'project' ? 'bg-orange-800 text-white' : 'bg-orange-600 text-gray-100'}`}
+        >
+          <AiOutlineProject className="mr-2 text-xl" />
+          Projects
+        </Button>
+        <Button
+          onClick={handleAddTask}
+          className="py-2 px-4 rounded-lg text-sm flex items-center bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 text-white transition duration-300"
+        >
+          <IoMdAdd className="mr-2 text-xl" />
+          Add Task
+        </Button>
       </div>
 
-      <div className="flex space-x-4">
-        <div className="w-full">
-          {view === 'board' && (
-            <TaskBoard
-              tasks={tasks}
-              onEdit={handleEdit}
-              onDelete={deleteTaskById}
-              employees={employees}
-              setTasks={setTasks}
-            />
-          )}
-          {view === 'list' && (
-            <TaskList
-              tasks={tasks}
-              onEdit={handleEdit}
-              onDelete={deleteTaskById}
-              employees={employees}
-              projects={projects}
-            />
-          )}
-          {view === 'project' && (
-            <ProjectView
-              tasks={tasks}
-              onEdit={handleEdit}
-              onDelete={deleteTaskById}
-              employees={employees}
-              projects={projects}
-            />
-          )}
-        </div>
+      <div className="p-0 m-0">
+        {view === 'board' && (
+          <TaskBoard
+            tasks={tasks}
+            onEdit={handleEdit}
+            onDelete={deleteTaskById}
+            employees={employees}
+            setTasks={setTasks}
+          />
+        )}
+        {view === 'list' && (
+          <TaskList
+            tasks={tasks}
+            onEdit={handleEdit}
+            onDelete={deleteTaskById}
+            employees={employees}
+            projects={projects}
+          />
+        )}
+        {view === 'project' && (
+          <ProjectView
+            tasks={tasks}
+            onEdit={handleEdit}
+            onDelete={deleteTaskById}
+            employees={employees}
+            projects={projects}
+          />
+        )}
       </div>
 
       {isEditing && (

@@ -4,7 +4,7 @@ import { FaHome, FaUsers, FaTasks, FaProjectDiagram, FaChartBar, FaClock } from 
 
 const SideMenu = () => {
   return (
-    <aside className="bg-gray-800 text-gray-100 w-64 p-4">
+    <aside className="bg-gray-800 text-gray-100 w-50 p-4">
       <h2 className="text-2xl font-bold mb-4">Navigation</h2>
       <nav>
         <ul className="space-y-2">

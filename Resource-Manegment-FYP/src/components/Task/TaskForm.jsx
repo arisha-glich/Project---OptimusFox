@@ -32,29 +32,35 @@ const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">{task ? ' Task' : ' Task'}</h2>
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md w-full">
+      <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">
+        {task ? 'Edit Task' : 'Add New Task'}
+      </h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-1" htmlFor="name">Task Name</label>
+          <label className="block text-gray-700 font-medium mb-1 dark:text-gray-300" htmlFor="name">
+            Task Name
+          </label>
           <input
             id="name"
             name="name"
             type="text"
             value={formState.name}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-2 border border-gray-300 rounded-lg dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
             required
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-1" htmlFor="employeeId">Employee</label>
+          <label className="block text-gray-700 font-medium mb-1 dark:text-gray-300" htmlFor="employeeId">
+            Employee
+          </label>
           <select
             id="employeeId"
             name="employeeId"
             value={formState.employeeId}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-2 border border-gray-300 rounded-lg dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
           >
             <option value="">Select Employee</option>
             {employees.map((emp) => (
@@ -63,13 +69,15 @@ const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-1" htmlFor="projectId">Project</label>
+          <label className="block text-gray-700 font-medium mb-1 dark:text-gray-300" htmlFor="projectId">
+            Project
+          </label>
           <select
             id="projectId"
             name="projectId"
             value={formState.projectId}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-2 border border-gray-300 rounded-lg dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
           >
             <option value="">Select Project</option>
             {projects.map((proj) => (
@@ -78,35 +86,41 @@ const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-1" htmlFor="assignedDate">Assigned Date</label>
+          <label className="block text-gray-700 font-medium mb-1 dark:text-gray-300" htmlFor="assignedDate">
+            Assigned Date
+          </label>
           <input
             id="assignedDate"
             name="assignedDate"
             type="date"
             value={formState.assignedDate}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-2 border border-gray-300 rounded-lg dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-1" htmlFor="deadlineDate">Deadline Date</label>
+          <label className="block text-gray-700 font-medium mb-1 dark:text-gray-300" htmlFor="deadlineDate">
+            Deadline Date
+          </label>
           <input
             id="deadlineDate"
             name="deadlineDate"
             type="date"
             value={formState.deadlineDate}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-2 border border-gray-300 rounded-lg dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-1" htmlFor="status">Status</label>
+          <label className="block text-gray-700 font-medium mb-1 dark:text-gray-300" htmlFor="status">
+            Status
+          </label>
           <select
             id="status"
             name="status"
             value={formState.status}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-full p-2 border border-gray-300 rounded-lg dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
           >
             <option value="Pending">Pending</option>
             <option value="In Progress">In Progress</option>
@@ -116,14 +130,14 @@ const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
         <div className="flex justify-end space-x-4">
           <button
             type="submit"
-            className="py-2 px-4 bg-blue-600 text-white rounded-lg"
+            className="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400"
           >
             Save
           </button>
           <button
             type="button"
             onClick={onCancel}
-            className="py-2 px-4 bg-gray-300 text-gray-700 rounded-lg"
+            className="py-2 px-4 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
           >
             Cancel
           </button>

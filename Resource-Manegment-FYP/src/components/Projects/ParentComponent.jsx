@@ -4,7 +4,6 @@ import ProjectEditPopup from './ProjectEditPopup';
 import { fetchProjects, updateProject, deleteProject, createProject } from '../../services/projectService';
 import Button from '../Reusable/Button';
 import ProjectForm from './ProjectForm';
-import '../../styles/ParentComponent.css';
 
 const ParentComponent = () => {
   const [projects, setProjects] = useState([]);
@@ -61,12 +60,12 @@ const ParentComponent = () => {
   };
 
   return (
-    <div className="p-4">
-      <div className="project-form-container">
-        <Button variant="" onClick={() => setIsCreating(true)} className="add-project-button">
+    <div className="p-4 bg-white dark:bg-gray-900 min-h-screen">
+      <div className="project-form-container mb-4">
+        <Button variant="primary" onClick={() => setIsCreating(true)} className="mb-4">
           Add New Project
         </Button>
-        <p className="mt-4 text-gray-700">
+        <p className="text-gray-700 dark:text-gray-300">
           Adding new projects is crucial for business growth and innovation. It allows teams to tackle new challenges, explore new opportunities, and stay competitive in a rapidly changing environment. By continually adding and updating projects, you ensure your organization remains dynamic and responsive.
         </p>
       </div>
@@ -78,7 +77,7 @@ const ParentComponent = () => {
         />
       )}
 
-      <div className="project-list-container">
+      <div className="project-list-container mt-4">
         <ProjectListContainer
           projects={projects}
           onEdit={handleEditClick}
@@ -86,8 +85,8 @@ const ParentComponent = () => {
         />
       </div>
 
-      {showEditPopup && (
-        <div className="project-edit-popup">
+      {showEditPopup && selectedProject && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <ProjectEditPopup
             project={selectedProject}
             onClose={() => setShowEditPopup(false)}

@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import ProjectView from './ProjectView'; // Import ProjectView
-import TaskForm from './TaskForm'; // Keep TaskForm for editing tasks
-import { useTasks } from '../../hooks/useTasks'; // Custom hook for tasks
-import { useProjects } from '../../hooks/useProjects'; // Custom hook for projects
-import { useEmployees } from '../../hooks/useEmployees'; // Custom hook for employees
-import { refreshProjects } from '../../services/projectService'; // Service for fetching projects
+import TaskBoard from './TaskBoard';
+import TaskForm from './TaskForm';
+import TaskList from './TaskList';
+import ProjectView from './ProjectView';
+import { useTasks } from '../../hooks/useTasks';
+import { useProjects } from '../../hooks/useProjects';
+import { useEmployees } from '../../hooks/useEmployees';
+import { refreshProjects } from '../../services/projectService';
+import Button from '../Reusable/Button'; // Import the Button component
+import { AiOutlineProject } from 'react-icons/ai'; // Import icons
+import { IoMdAdd } from 'react-icons/io'; // Import icons
 
-const TaskManager2 = () => {
+const TaskManager = () => {
   const { tasks, addTask, updateTaskById, deleteTaskById, setTasks } = useTasks();
   const { projects, setProjects } = useProjects();
   const { employees, setEmployees } = useEmployees();
   const [currentTask, setCurrentTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
+  const [view, setView] = useState('project'); // Default view
 
   useEffect(() => {
     const fetchProjectsData = async () => {
@@ -46,35 +52,30 @@ const TaskManager2 = () => {
   };
 
   const handleAddTask = () => {
-    setCurrentTask({ name: '', employeeId: '', projectId: '', assignedDate: '', schedule: '', status: 'Pending' });
+    setCurrentTask({ name: '', employeeId: '', projectId: '', assignedDate: '', deadlineDate: '', status: 'Pending' });
     setIsEditing(true);
   };
 
   return (
-    <div>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Project Manager</h1>
-        <div>
-          <button
-            onClick={handleAddTask}
-            className="py-2 px-4 rounded-lg bg-green-600 text-white"
-          >
-            Task
-          </button>
-        </div>
+    <div className="overflow-scroll bg-white dark:bg-darkblue min-h-screen">
+      <div className="flex justify-end space-x-2 p-4 bg-white dark:bg-darkblue border-b dark:border-gray-700">
+        <Button
+          onClick={handleAddTask}
+          className="py-2 px-4 rounded-lg text-sm flex items-center bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 text-white transition duration-300"
+        >
+          <IoMdAdd className="mr-2 text-xl" />
+          Add Task
+        </Button>
       </div>
 
-      <div className="flex space-x-4">
-        <div className="w-full">
-          {/* Only ProjectView is rendered */}
-          <ProjectView
-            tasks={tasks}
-            onEdit={handleEdit}
-            onDelete={deleteTaskById}
-            employees={employees}
-            projects={projects}
-          />
-        </div>
+      <div className="p-4">
+        <ProjectView
+          tasks={tasks}
+          onEdit={handleEdit}
+          onDelete={deleteTaskById}
+          employees={employees}
+          projects={projects}
+        />
       </div>
 
       {isEditing && (
@@ -92,4 +93,4 @@ const TaskManager2 = () => {
   );
 };
 
-export default TaskManager2;
+export default TaskManager;

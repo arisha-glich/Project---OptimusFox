@@ -12,7 +12,7 @@ const HomePage = () => {
           <p className="text-lg md:text-2xl mb-6">Manage projects, track tasks, and streamline your workflow effortlessly.</p>
           <Link
             to="/projects"
-            className="bg-red-500 text-white py-2 px-6 rounded shadow hover:bg-blue-600 transition"
+            className="bg-red-500 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-red-600 transition"
           >
             Get Started
           </Link>
@@ -20,38 +20,38 @@ const HomePage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-12 bg-gray-100">
+      <section className="py-12 bg-white dark:bg-gray-500">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-8 fade-in-up">Key Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded shadow-md fade-in-up">
-              <h3 className="text-xl font-semibold mb-2">Task Management</h3>
-              <p>Efficiently manage tasks with customizable workflows and tracking.</p>
+            <div className="bg-blue-100 dark:bg-blue-800 p-6 rounded-lg shadow-md fade-in-up">
+              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Task Management</h3>
+              <p className="text-gray-600 dark:text-gray-300">Efficiently manage tasks with customizable workflows and tracking.</p>
             </div>
-            <div className="bg-white p-6 rounded shadow-md fade-in-up">
-              <h3 className="text-xl font-semibold mb-2">Project Tracking</h3>
-              <p>Keep track of project milestones, deadlines, and progress in real-time.</p>
+            <div className="bg-blue-100 dark:bg-blue-800 p-6 rounded-lg shadow-md fade-in-up">
+              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Project Tracking</h3>
+              <p className="text-gray-600 dark:text-gray-300">Keep track of project milestones, deadlines, and progress in real-time.</p>
             </div>
-            <div className="bg-white p-6 rounded shadow-md fade-in-up">
-              <h3 className="text-xl font-semibold mb-2">Resource Allocation</h3>
-              <p>Allocate resources effectively and optimize utilization for better outcomes.</p>
+            <div className="bg-blue-100 dark:bg-blue-800 p-6 rounded-lg shadow-md fade-in-up">
+              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Resource Allocation</h3>
+              <p className="text-gray-600 dark:text-gray-300">Allocate resources effectively and optimize utilization for better outcomes.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-12 about-container">
+      <section className="py-12 bg-gray-100 dark:bg-gray-900">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-8 about-text">About Us</h2>
-          <p className="text-lg mb-6 about-text">
+          <h2 className="text-3xl font-bold mb-8 about-text text-gray-800 dark:text-white">About Us</h2>
+          <p className="text-lg mb-6 about-text text-gray-600 dark:text-gray-300">
             Our resource management application is designed to help businesses streamline their operations. 
             With our intuitive interface and powerful features, you can effortlessly manage your projects 
             and resources, ensuring optimal efficiency and productivity.
           </p>
           <Link
             to="/about"
-            className="bg-gray-800 text-white py-2 px-6 rounded shadow hover:bg-gray-700 transition about-link"
+            className="bg-gray-800 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-gray-700 transition about-link"
           >
             Learn More
           </Link>
@@ -65,7 +65,7 @@ const HomePage = () => {
           <p className="text-lg mb-6 fade-in-up">Sign up today and start optimizing your resources with our powerful application.</p>
           <Link
             to="/projects"
-            className="bg-red-500 text-white py-2 px-6 rounded shadow hover:bg-blue-600 transition fade-in-up"
+            className="bg-red-500 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-red-600 transition fade-in-up"
           >
             Get Started
           </Link>

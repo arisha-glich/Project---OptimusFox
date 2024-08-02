@@ -49,8 +49,7 @@ const ProjectManager = () => {
   };
 
   return (
-    <div>
-
+    <div className="p-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
       <EmployeeList employees={employees} onEdit={handleEdit} onDelete={handleDelete} />
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <EmployeeForm

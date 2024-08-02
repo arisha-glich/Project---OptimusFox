@@ -40,13 +40,17 @@ const ProjectList = () => {
   };
 
   return (
-    <div>
+    <div className="p-6 bg-white dark:bg-darkblue text-gray-800 dark:text-gray-200">
       <h1 className="text-2xl font-bold mb-4">Projects</h1>
       <ul>
         {projects.map(project => (
-          <li key={project.id} className="mb-2">
-            {project.name}
-            <Button onClick={() => handleEdit(project)} variant="primary" className="ml-2">
+          <li key={project.id} className="mb-2 flex items-center">
+            <span className="flex-1">{project.name}</span>
+            <Button 
+              onClick={() => handleEdit(project)} 
+              variant="primary" 
+              className="ml-2 bg-blue-600 dark:bg-blue-500 text-white dark:text-gray-800"
+            >
               Edit
             </Button>
           </li>

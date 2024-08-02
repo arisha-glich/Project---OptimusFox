@@ -45,5 +45,5 @@ export const useProjects = () => {
     }
   };
 
-  return { projects, addProject, updateProjectById, deleteProjectById };
+  return { projects, addProject, updateProjectById, deleteProjectById, setProjects };
 };

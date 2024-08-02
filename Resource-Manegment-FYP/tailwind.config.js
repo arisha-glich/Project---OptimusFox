@@ -1,7 +1,7 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'], // Updated from purge to content
-  darkMode: 'media', // Set to 'media', 'class', or remove if not needed
+  content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: 'class', // Enable dark mode with class-based toggling
   theme: {
     extend: {
       colors: {
@@ -17,11 +17,18 @@ module.exports = {
           DEFAULT: '#38c172',
           dark: '#2f9d69',
         },
+        darkblue: '#001f3f', // Custom dark mode color
+        // Add other custom colors if needed
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['dark'],
+      borderColor: ['dark'],
+      textColor: ['dark'],
+      // Add other variants if needed
+    },
   },
   plugins: [],
 };

@@ -1,32 +1,28 @@
-// src/components/LogoutPopup.jsx
 import React from 'react';
-import { useAuth } from '../../context/AuthProvider';
 
 const LogoutPopup = ({ isVisible, onConfirm, onCancel }) => {
-  const { logout } = useAuth(); // Access the logout function from context
-
-  const handleConfirm = () => {
-    logout(); // Call the logout function from context
-    onConfirm(); // Callback to close the popup
-  };
-
-  if (!isVisible) return null; // Don't render if not visible
+  if (!isVisible) return null;
 
   return (
-    <div className="absolute right-0 top-full mt-2 bg-white text-gray-800 p-4 border border-gray-300 shadow-lg rounded-lg">
-      <p className="mb-4">Are you sure you want to log out?</p>
-      <button
-        onClick={handleConfirm}
-        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-500"
-      >
-        Logout
-      </button>
-      <button
-        onClick={onCancel}
-        className="ml-2 bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200"
-      >
-        Cancel
-      </button>
+    <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-6 rounded-lg shadow-lg">
+        <h2 className="text-lg font-semibold mb-4">Confirm Logout</h2>
+        <p className="mb-4">Are you sure you want to log out?</p>
+        <div className="flex justify-end space-x-4">
+          <button
+            onClick={onCancel}
+            className="bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 py-2 px-4 rounded-lg"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={onConfirm}
+            className="bg-red-500 text-white py-2 px-4 rounded-lg"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
