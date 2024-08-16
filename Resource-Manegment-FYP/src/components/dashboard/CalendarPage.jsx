@@ -63,7 +63,7 @@ const CalendarPage = () => {
   return (
     <div className="p-6 bg-gray-100 dark:bg-gray-900 min-h-screen">
       <h2 className="flex items-center justify-center  text-3xl font-bold mb-4 text-gray-800 dark:text-gray-200">
-        Calendar
+        Event Calendar
       </h2>
       <div className="calendar-container w-full max-w-4xl mx-auto">
         <Calendar
