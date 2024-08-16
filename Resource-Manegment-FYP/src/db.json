@@ -99,47 +99,18 @@
       "confirmPassword": "arishamaaj",
       "phone": "03164508016",
       "dob": "2000-08-10"
+    },
+    {
+      "id": "fdbe",
+      "fullName": "Arisha",
+      "email": "arishanawaz11@gmail.com",
+      "password": "22",
+      "confirmPassword": "22",
+      "phone": "0222222222222",
+      "dob": "2024-08-30"
     }
   ],
   "employees": [
-    {
-      "id": "6a7b",
-      "name": "Jessica White",
-      "role": "UI/UX Designer",
-      "skills": [
-        "Figma",
-        "Sketch",
-        "Adobe XD"
-      ],
-      "availability": "Monday to Friday",
-      "schedule": [
-        {
-          "0": "8",
-          "day": "Monday",
-          "hours": "9:00 - 17:00"
-        },
-        {
-          "0": "8",
-          "day": "Tuesday",
-          "hours": "9:00 - 17:00"
-        },
-        {
-          "0": "8",
-          "day": "Wednesday",
-          "hours": "9:00 - 17:00"
-        },
-        {
-          "0": "8",
-          "day": "Thursday",
-          "hours": "9:00 - 17:00"
-        },
-        {
-          "0": "8",
-          "day": "Friday",
-          "hours": "9:00 - 17:00"
-        }
-      ]
-    },
     {
       "id": "6b7c",
       "name": "David Lee",
@@ -249,10 +220,10 @@
   ],
   "projects": [
     {
-      "id": "p4d5",
       "name": "Internal Tool Development",
-      "status": "Not Started",
-      "deadline": "2024-09-15"
+      "status": "Pending",
+      "deadline": "2024-09-15",
+      "id": "p4d5"
     },
     {
       "id": "p5e6",
@@ -307,8 +278,8 @@
     {
       "id": "t3c4",
       "name": "Design Mockups",
-      "status": "Pending",
-      "employeeId": "6a7b",
+      "status": "In Progress",
+      "employeeId": null,
       "projectId": "p5e6",
       "scheduledTime": "2024-07-30T15:00:00Z",
       "duration": "5h",
@@ -319,7 +290,7 @@
     {
       "id": "t4d5",
       "name": "Content Creation",
-      "status": "Pending",
+      "status": "In Progress",
       "employeeId": "6b7c",
       "projectId": "p4d5",
       "scheduledTime": "2024-07-24T11:00:00Z",
@@ -332,7 +303,7 @@
       "id": "7433",
       "name": "Extra Assignment",
       "status": "Pending",
-      "employeeId": "6a7b",
+      "employeeId": null,
       "projectId": "p4d5",
       "assignedDate": "2024-07-29",
       "schedule": "Once",
@@ -341,7 +312,7 @@
     {
       "id": "5b81",
       "name": "Review Task",
-      "status": "In Progress",
+      "status": "Pending",
       "employeeId": "6c8d",
       "projectId": "b147",
       "assignedDate": "2024-07-03",
@@ -352,7 +323,7 @@
       "id": "t1",
       "name": "Initial Research",
       "status": "In Progress",
-      "employeeId": "6a7b",
+      "employeeId": null,
       "projectId": null,
       "assignedDate": "2024-07-01",
       "schedule": "One-time",
@@ -371,7 +342,7 @@
     {
       "id": "t4",
       "name": "Usability Testing",
-      "status": "Completed",
+      "status": "In Progress",
       "employeeId": "6b7c",
       "projectId": null,
       "assignedDate": "2024-07-05",
@@ -381,8 +352,8 @@
     {
       "id": "t5",
       "name": "Feedback Analysis",
-      "status": "Completed",
-      "employeeId": "6a7b",
+      "status": "In Progress",
+      "employeeId": null,
       "projectId": null,
       "assignedDate": "2024-07-10",
       "schedule": "One-time",
@@ -391,7 +362,7 @@
     {
       "id": "t6",
       "name": "Final Presentation",
-      "status": "Completed",
+      "status": "In Progress",
       "employeeId": "6b7c",
       "projectId": null,
       "assignedDate": "2024-07-20",
@@ -422,7 +393,7 @@
       "id": "t10",
       "name": "Testing & QA",
       "status": "Pending",
-      "employeeId": "6a7b",
+      "employeeId": null,
       "projectId": "p4d5",
       "assignedDate": "2024-08-01",
       "schedule": "Weekly",
@@ -452,7 +423,7 @@
       "id": "t13",
       "name": "Design Wireframes",
       "status": "Pending",
-      "employeeId": "6a7b",
+      "employeeId": null,
       "projectId": "p5e6",
       "assignedDate": "2024-07-01",
       "schedule": "One-time",
@@ -492,7 +463,7 @@
       "id": "t18",
       "name": "Final Adjustments",
       "status": "Pending",
-      "employeeId": "6a7b",
+      "employeeId": null,
       "projectId": "p5e6",
       "assignedDate": "2024-08-22",
       "schedule": "One-time",
@@ -516,6 +487,114 @@
       "assignedDate": "2024-08-02",
       "deadlineDate": "2024-08-23",
       "status": "In Progress"
+    },
+    {
+      "id": "18e7",
+      "title": "hello ",
+      "date": "2024-08-14"
+    },
+    {
+      "id": "2363",
+      "title": "dsf",
+      "date": "2024-08-14"
+    },
+    {
+      "id": "06a1",
+      "title": "dfsfds",
+      "date": "2024-08-14"
+    },
+    {
+      "id": "800d",
+      "name": "SSSSSSEEEEEEEEEEEEE",
+      "employeeId": "6b7c",
+      "projectId": "1c2b",
+      "assignedDate": "2024-08-02",
+      "deadlineDate": "2024-08-29",
+      "status": "In Progress"
+    },
+    {
+      "id": "8da2",
+      "name": "SFFDDDDDDD",
+      "employeeId": "268a",
+      "projectId": "b147",
+      "assignedDate": "2024-08-07",
+      "deadlineDate": "2024-08-28",
+      "status": "Completed"
+    },
+    {
+      "id": "0c4c",
+      "name": "hello",
+      "employeeId": "268a",
+      "projectId": "p4d5",
+      "assignedDate": "2024-08-22",
+      "deadlineDate": "2024-08-22",
+      "status": "Pending"
+    },
+    {
+      "id": "edff",
+      "name": "aa",
+      "employeeId": "6b7c",
+      "projectId": "4d7b",
+      "assignedDate": "2024-09-05",
+      "deadlineDate": "2024-08-16",
+      "status": "Pending"
+    },
+    {
+      "id": "50be",
+      "name": "hello",
+      "employeeId": "268a",
+      "projectId": "daca",
+      "assignedDate": "2024-09-07",
+      "deadlineDate": "2024-08-02",
+      "status": "Pending"
+    },
+    {
+      "id": "39ba",
+      "name": "ar",
+      "employeeId": "268a",
+      "projectId": "daca",
+      "assignedDate": "2024-08-30",
+      "deadlineDate": "2024-08-30",
+      "status": "Pending"
+    },
+    {
+      "id": "4e52",
+      "name": "Authetication ",
+      "employeeId": "211b",
+      "projectId": "df7c",
+      "assignedDate": "2024-08-29",
+      "deadlineDate": "2024-09-04",
+      "status": "Pending"
+    },
+    {
+      "id": "3947",
+      "name": "Authentication",
+      "employeeId": "268a",
+      "projectId": "p5e6",
+      "assignedDate": "2024-08-03",
+      "deadlineDate": "2024-07-31",
+      "status": "Pending"
+    }
+  ],
+  "events": [
+    {
+      "title": "Meeting with US",
+      "date": "2024-08-20T00:00:00.000Z"
+    },
+    {
+      "id": "e647",
+      "title": "INIT",
+      "date": "2024-08-21T00:00:00.000Z"
+    },
+    {
+      "id": "",
+      "title": "Supervisor",
+      "date": "2024-08-16T09:25:42.641Z"
+    },
+    {
+      "id": "",
+      "title": "HR",
+      "date": "2024-08-31T00:00:00.000Z"
     }
   ]
 }

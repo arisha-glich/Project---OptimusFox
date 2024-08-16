@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSearch } from '../../context/SearchContext';
 
 const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete }) => {
   const { searchQuery, setSearchQuery } = useSearch();
-
+  
   // Create lookup maps for employees and projects
   const employeeMap = employees.reduce((map, emp) => {
     map[emp.id] = emp.name;
@@ -30,6 +30,19 @@ const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete 
   const startIndex = (currentPage - 1) * tasksPerPage;
   const currentTasks = filteredTasks.slice(startIndex, startIndex + tasksPerPage);
 
+  // Debounce functionality
+  const searchTimeoutRef = useRef(null);
+
+  const handleSearchChange = (e) => {
+    const newQuery = e.target.value;
+    if (searchTimeoutRef.current) {
+      clearTimeout(searchTimeoutRef.current);
+    }
+    searchTimeoutRef.current = setTimeout(() => {
+      setSearchQuery(newQuery);
+    }, 500); // 500ms debounce delay
+  };
+
   // Handler for page change
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -43,8 +56,7 @@ const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete 
         <input
           type="text"
           placeholder="Search tasks..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={handleSearchChange}
           className="px-4 py-2 border border-gray-300 rounded-lg w-full max-w-xs dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
           aria-label="Search tasks"
         />
@@ -68,7 +80,7 @@ const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete 
             currentTasks.map(task => (
               <tr
                 key={task.id}
-                className="transition-transform transform hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="transition-transform transform hover:scale-100 hover:bg-gray-100 dark:hover:bg-gray-700"
                 role="row"
               >
                 <td className="py-3 px-4 border-b text-gray-800 dark:text-gray-200">{task.name}</td>
@@ -79,17 +91,17 @@ const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete 
                   <div className="flex space-x-2">
                     <button
                       onClick={() => onEdit(task)}
-                      className="py-1 px-3 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors dark:bg-yellow-500 dark:hover:bg-yellow-400"
+                      className="py-1 px-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-400 transition-colors dark:bg-yellow-500 dark:hover:bg-yellow-400"
                       aria-label={`Edit task ${task.name}`}
                     >
-                      Edit
+                      +
                     </button>
                     <button
                       onClick={() => onDelete(task.id)}
-                      className="py-1 px-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors dark:bg-red-500 dark:hover:bg-red-400"
+                      className="py-1 px-2 bg-red-600 text-white rounded-md hover:bg-red-400 transition-colors dark:bg-red-500 dark:hover:bg-red-400"
                       aria-label={`Delete task ${task.name}`}
                     >
-                      Delete
+                    -
                     </button>
                   </div>
                 </td>

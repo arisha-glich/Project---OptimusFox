@@ -1,0 +1,49 @@
+/* Add this to your CSS file or use Tailwind's @apply directive in your styles */
+.calendar-large {
+    max-width: 1000px; /* Adjust width as needed */
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Custom styles for calendar */
+.react-calendar {
+    font-size: 16px; /* Adjust font size */
+  }
+  
+  .react-calendar__month-view__days__day {
+    padding: 10px; /* Add padding inside each day tile */
+    margin: 2px;   /* Add margin between tiles */
+  }
+  
+  .react-calendar__tile {
+    padding: 10px; /* Add padding inside each tile */
+    margin: 2px;   /* Add margin between tiles */
+  }
+  
+  .react-calendar__tile--active {
+    background-color: #4A90E2; /* Highlight active day */
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .react-calendar__tile--hasActive {
+    background-color: #E8F0FE; /* Highlight days with events */
+    border-radius: 5px;
+  }
+  
+  .react-calendar__tile--now {
+    font-weight: bold; /* Highlight today's date */
+  }
+  
+  .react-calendar__navigation {
+    padding: 10px; /* Add padding around navigation controls */
+  }
+  
+  .react-calendar__month-view__weekdays {
+    padding: 10px; /* Add padding around weekdays header */
+  }
+  
+  .react-calendar__month-view__weekdays__weekday {
+    padding: 5px; /* Add padding inside each weekday */
+  }
+  

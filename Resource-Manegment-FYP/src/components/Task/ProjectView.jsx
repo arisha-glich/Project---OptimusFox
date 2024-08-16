@@ -39,16 +39,17 @@ const ProjectView = ({ tasks, onEdit, onDelete, employees, projects }) => {
                     <Button
                       onClick={() => onEdit(task)}
                       variant="primary"
-                      className="py-1 px-2 text-xs bg-blue-600 dark:bg-blue-800 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-900 transition-colors"
+                      className="py-1 px-2 text-xs bg-blue-600 dark:bg-blue-800 text-white  hover:bg-blue-700 dark:hover:bg-blue-900 rounded-none transition-colors"
                     >
-                      Edit
+                   +
                     </Button>
                     <Button
                       onClick={() => onDelete(task.id)}
                       variant="danger"
-                      className="py-1 px-2 text-xs bg-red-600 dark:bg-red-800 text-white rounded-lg hover:bg-red-700 dark:hover:bg-red-900 transition-colors"
+                      className="bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white  rounded-none"
+  title="Delete Employee" // Tooltip text
                     >
-                      Delete
+                      -
                     </Button>
                   </div>
                 </div>

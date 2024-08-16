@@ -16,6 +16,8 @@ import ParentComponent from './components/Projects/ParentComponent';
 import TaskManager2 from './components/Task/TaskManegar2';
 import { ThemeContext, ThemeProvider } from './context/ThemeContext';
 import './styles/theme.css';
+import Dashboard from './components/dashboard/Dashboard';
+import CalendarPage from './components/dashboard/CalendarPage';
 
 function App() {
   const { isAuthenticated } = useAuth();
@@ -32,11 +34,14 @@ function App() {
         <Route path="/signup" element={isAuthenticated ? <Navigate to="/home" /> : <Signup />} />
 
         <Route path="/" element={<AuthenticatedLayout />}>
+        "
           <Route path="/home" element={<HomePage />} />
           <Route path="/viewprojects" element={<TaskManager2 />} />
+          <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/viewemployees" element={<DisplayEmployeeList />} />
           <Route path="/employees" element={<EmployeeManager />} />
+          <Route path="/calendar" element={<CalendarPage/>} />
           <Route path="/tasks" element={<TaskManager />} />
           <Route path="/projects" element={<ParentComponent />} />
           <Route path="/charts" element={<Charts />} />

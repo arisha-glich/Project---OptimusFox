@@ -10,11 +10,11 @@ const SideMenu = () => {
         <ul className="space-y-2">
           <li>
             <Link
-              to="/home"
+              to="/dashboard"
               className="flex items-center py-2 px-3 rounded hover:bg-gray-700 hover:text-white transition duration-200"
             >
               <FaHome className="mr-2" />
-              Home
+              Dashboard
             </Link>
           </li>
           <li>

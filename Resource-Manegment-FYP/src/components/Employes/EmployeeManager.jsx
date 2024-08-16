@@ -56,7 +56,7 @@ const ProjectManager = () => {
           onClick={handleAdd} 
           className="add-employee-button bg-[#8898a8] hover:bg-[#002a5e] dark:bg-[#3f652e] dark:hover:bg-[#77849a] text-white font-bold py-2 px-4 rounded"
         >
-          Add Employee
+          + 
         </button>
         <p className="add-employee-text text-gray-700 dark:text-gray-300">
           Adding new employees is essential for expanding your team's capabilities and ensuring that all projects are adequately staffed with the right skills.

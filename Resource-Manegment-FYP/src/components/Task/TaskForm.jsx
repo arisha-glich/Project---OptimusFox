@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
+const TaskForm = ({ task, onSave, onCancel, employees = [], projects = [] }) => {
   const [formState, setFormState] = useState(task || {
     name: '',
     employeeId: '',
@@ -63,7 +63,7 @@ const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
             className="w-full p-2 border border-gray-300 rounded-lg dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
           >
             <option value="">Select Employee</option>
-            {employees.map((emp) => (
+            {employees.length > 0 && employees.map((emp) => (
               <option key={emp.id} value={emp.id}>{emp.name}</option>
             ))}
           </select>
@@ -80,7 +80,7 @@ const TaskForm = ({ task, onSave, onCancel, employees, projects }) => {
             className="w-full p-2 border border-gray-300 rounded-lg dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200"
           >
             <option value="">Select Project</option>
-            {projects.map((proj) => (
+            {projects.length > 0 && projects.map((proj) => (
               <option key={proj.id} value={proj.id}>{proj.name}</option>
             ))}
           </select>

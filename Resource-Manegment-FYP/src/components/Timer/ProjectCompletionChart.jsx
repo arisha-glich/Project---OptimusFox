@@ -5,18 +5,18 @@ import { fetchProjects } from '../../services/projectService'; // Adjust the imp
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const ProjectCompletionChart = () => {
+const ProjectCompletionChart = ({ isDarkMode }) => {
   const [chartData, setChartData] = useState({
     labels: [],
     datasets: [
       {
         label: 'Project Success Rate (%)',
         data: [],
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 1
-      }
-    ]
+        backgroundColor: isDarkMode ? 'rgba(255, 99, 132, 0.2)' : 'rgba(75, 192, 192, 0.2)',
+        borderColor: isDarkMode ? 'rgba(255, 99, 132, 1)' : 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+      },
+    ],
   });
 
   useEffect(() => {
@@ -37,11 +37,11 @@ const ProjectCompletionChart = () => {
             {
               label: 'Project Success Rate (%)',
               data: completionRates,
-              backgroundColor: 'rgba(75, 192, 192, 0.2)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              borderWidth: 1
-            }
-          ]
+              backgroundColor: isDarkMode ? 'rgba(255, 99, 132, 0.2)' : 'rgba(75, 192, 192, 0.2)',
+              borderColor: isDarkMode ? 'rgba(255, 99, 132, 1)' : 'rgba(75, 192, 192, 1)',
+              borderWidth: 1,
+            },
+          ],
         });
       } catch (error) {
         console.error('Error fetching and calculating data:', error);
@@ -49,11 +49,13 @@ const ProjectCompletionChart = () => {
     };
 
     fetchAndCalculateData();
-  }, []);
+  }, [isDarkMode]);
 
   return (
     <div className="p-4 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Project Completion Chart</h1>
+      <h1 className={`text-2xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+        Project Completion Chart
+      </h1>
       <Bar
         data={chartData}
         options={{
@@ -61,31 +63,45 @@ const ProjectCompletionChart = () => {
           plugins: {
             legend: {
               position: 'top',
+              labels: {
+                color: isDarkMode ? 'white' : 'black',
+              },
             },
             tooltip: {
               callbacks: {
-                label: function(context) {
+                label: function (context) {
                   return `Completion Rate: ${context.raw}%`;
-                }
-              }
-            }
+                },
+              },
+              backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.7)',
+              titleColor: isDarkMode ? 'black' : 'white',
+              bodyColor: isDarkMode ? 'black' : 'white',
+            },
           },
           scales: {
             x: {
               title: {
                 display: true,
-                text: 'Projects'
-              }
+                text: 'Projects',
+                color: isDarkMode ? 'white' : 'black',
+              },
+              ticks: {
+                color: isDarkMode ? 'white' : 'black',
+              },
             },
             y: {
               title: {
                 display: true,
-                text: 'Completion Rate (%)'
+                text: 'Completion Rate (%)',
+                color: isDarkMode ? 'white' : 'black',
+              },
+              ticks: {
+                color: isDarkMode ? 'white' : 'black',
               },
               beginAtZero: true,
-              suggestedMax: 100
-            }
-          }
+              suggestedMax: 100,
+            },
+          },
         }}
       />
     </div>

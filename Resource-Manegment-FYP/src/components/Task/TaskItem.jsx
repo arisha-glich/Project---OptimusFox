@@ -20,15 +20,15 @@ const TaskItem = ({ task, onEdit, onDelete, moveTask }) => {
       <p>Employee: {task.employeeName || 'N/A'}</p>
       <button
         onClick={() => onEdit(task)}
-        className="mt-2 py-1 px-2 bg-blue-500 text-white rounded"
+        className="mt-2 py-1 px-2 bg-blue-500 text-white rounded-none"
       >
-        Edit
+       +
       </button>
       <button
         onClick={() => onDelete(task.id)}
-        className="mt-2 py-1 px-2 bg-red-500 text-white rounded ml-2"
+        className="mt-2 py-1 px-2 bg-red-500 text-white rounded-none ml-2"
       >
-        Delete
+        -
       </button>
     </div>
   );

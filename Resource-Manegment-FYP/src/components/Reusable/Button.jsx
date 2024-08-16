@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ children, onClick, variant = 'primary', size = 'small', className = '', ...props }) => {
+const Button = ({ children, onClick, variant = 'primary', size = 'small', type = '', className = '', ...props }) => {
   const baseClasses = 'rounded-full transition duration-300 ease-in-out transform shadow-lg hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2';
 
   const variantClasses = {
@@ -16,13 +16,15 @@ const Button = ({ children, onClick, variant = 'primary', size = 'small', classN
     small: 'py-1 px-2 text-sm',
   };
 
+  const icon = type === 'plus' ? '+' : type === 'minus' ? '-' : '';
+
   return (
     <button
       onClick={onClick}
       className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
       {...props}
     >
-      {children}
+      {icon} {children}
     </button>
   );
 };

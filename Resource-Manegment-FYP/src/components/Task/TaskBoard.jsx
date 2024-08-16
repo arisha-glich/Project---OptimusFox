@@ -144,16 +144,17 @@ const TaskBoard = ({
                 <Button
                   onClick={() => onEdit(task)}
                   variant="primary"
-                  className="py-1 px-2 text-xs bg-blue-600 dark:bg-blue-800 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-900 transition-colors"
-                >
-                  Edit
+                  className="py-1 px-2 text-xs bg-blue-600 dark:bg-blue-800 text-white rounded-none hover:bg-blue-700 dark:hover:bg-blue-900 transition-colors"
+                  title="Edit Task">
+                  +
                 </Button>
                 <Button
                   onClick={() => onDelete(task.id)}
                   variant="danger"
-                  className="py-1 px-2 text-xs bg-red-600 dark:bg-red-800 text-white rounded-lg hover:bg-red-700 dark:hover:bg-red-900 transition-colors"
+                  className="py-1 px-2 text-xs bg-red-600 dark:bg-red-800 text-white rounded-none hover:bg-red-700 dark:hover:bg-red-900 transition-colors"
+                   title="Delete Task"
                 >
-                  Delete
+                  -
                 </Button>
               </div>
             </div>
