@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { useSearch } from '../../context/SearchContext';
 
 const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete }) => {
   const { searchQuery, setSearchQuery } = useSearch();
-  
+
   // Create lookup maps for employees and projects
   const employeeMap = employees.reduce((map, emp) => {
     map[emp.id] = emp.name;
@@ -16,9 +16,10 @@ const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete 
   }, {});
 
   // Filter tasks based on search query
-  const filteredTasks = tasks.filter(task =>
-    task.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredTasks = tasks.filter(task => {
+    const taskName = task?.name ?? '';
+    return taskName.toLowerCase().includes(searchQuery.toLowerCase());
+  });
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
@@ -29,19 +30,6 @@ const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete 
   // Slice tasks for current page
   const startIndex = (currentPage - 1) * tasksPerPage;
   const currentTasks = filteredTasks.slice(startIndex, startIndex + tasksPerPage);
-
-  // Debounce functionality
-  const searchTimeoutRef = useRef(null);
-
-  const handleSearchChange = (e) => {
-    const newQuery = e.target.value;
-    if (searchTimeoutRef.current) {
-      clearTimeout(searchTimeoutRef.current);
-    }
-    searchTimeoutRef.current = setTimeout(() => {
-      setSearchQuery(newQuery);
-    }, 500); // 500ms debounce delay
-  };
 
   // Handler for page change
   const handlePageChange = (page) => {
@@ -56,7 +44,8 @@ const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete 
         <input
           type="text"
           placeholder="Search tasks..."
-          onChange={handleSearchChange}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
           className="px-4 py-2 border border-gray-300 rounded-lg w-full max-w-xs dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
           aria-label="Search tasks"
         />
@@ -83,8 +72,8 @@ const TaskList = ({ tasks = [], employees = [], projects = [], onEdit, onDelete 
                 className="transition-transform transform hover:scale-100 hover:bg-gray-100 dark:hover:bg-gray-700"
                 role="row"
               >
-                <td className="py-3 px-4 border-b text-gray-800 dark:text-gray-200">{task.name}</td>
-                <td className="py-3 px-4 border-b text-gray-800 dark:text-gray-200">{task.status}</td>
+                <td className="py-3 px-4 border-b text-gray-800 dark:text-gray-200">{task.name ?? 'N/A'}</td>
+                <td className="py-3 px-4 border-b text-gray-800 dark:text-gray-200">{task.status ?? 'N/A'}</td>
                 <td className="py-3 px-4 border-b text-gray-800 dark:text-gray-200">{employeeMap[task.employeeId] || 'N/A'}</td>
                 <td className="py-3 px-4 border-b text-gray-800 dark:text-gray-200">{projectMap[task.projectId] || 'N/A'}</td>
                 <td className="py-3 px-4 border-b">

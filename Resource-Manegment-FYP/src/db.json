@@ -220,12 +220,6 @@
   ],
   "projects": [
     {
-      "name": "Internal Tool Development",
-      "status": "Pending",
-      "deadline": "2024-09-15",
-      "id": "p4d5"
-    },
-    {
       "id": "p5e6",
       "name": "Website Redesign",
       "status": "Completed",
@@ -292,7 +286,7 @@
       "name": "Content Creation",
       "status": "In Progress",
       "employeeId": "6b7c",
-      "projectId": "p4d5",
+      "projectId": null,
       "scheduledTime": "2024-07-24T11:00:00Z",
       "duration": "2h",
       "assignedDate": "2024-07-20",
@@ -304,7 +298,7 @@
       "name": "Extra Assignment",
       "status": "Pending",
       "employeeId": null,
-      "projectId": "p4d5",
+      "projectId": null,
       "assignedDate": "2024-07-29",
       "schedule": "Once",
       "deadlineDate": "2024-08-28"
@@ -372,9 +366,9 @@
     {
       "id": "t7",
       "name": "Requirement Gathering",
-      "status": "Completed",
+      "status": "In Progress",
       "employeeId": "6b7c",
-      "projectId": "p4d5",
+      "projectId": null,
       "assignedDate": "2024-07-01",
       "schedule": "One-time",
       "deadlineDate": "2024-07-10"
@@ -382,9 +376,9 @@
     {
       "id": "t8",
       "name": "System Design",
-      "status": "Completed",
+      "status": "In Progress",
       "employeeId": "6b7c",
-      "projectId": "p4d5",
+      "projectId": null,
       "assignedDate": "2024-07-05",
       "schedule": "One-time",
       "deadlineDate": "2024-07-15"
@@ -394,7 +388,7 @@
       "name": "Testing & QA",
       "status": "Pending",
       "employeeId": null,
-      "projectId": "p4d5",
+      "projectId": null,
       "assignedDate": "2024-08-01",
       "schedule": "Weekly",
       "deadlineDate": "2024-08-15"
@@ -404,7 +398,7 @@
       "name": "Documentation",
       "status": "Pending",
       "employeeId": "6b7c",
-      "projectId": "p4d5",
+      "projectId": null,
       "assignedDate": "2024-08-15",
       "schedule": "One-time",
       "deadlineDate": "2024-08-25"
@@ -414,7 +408,7 @@
       "name": "Deployment",
       "status": "Pending",
       "employeeId": "6b7c",
-      "projectId": "p4d5",
+      "projectId": null,
       "assignedDate": "2024-08-25",
       "schedule": "One-time",
       "deadlineDate": "2024-09-01"
@@ -513,19 +507,10 @@
       "status": "In Progress"
     },
     {
-      "id": "8da2",
-      "name": "SFFDDDDDDD",
-      "employeeId": "268a",
-      "projectId": "b147",
-      "assignedDate": "2024-08-07",
-      "deadlineDate": "2024-08-28",
-      "status": "Completed"
-    },
-    {
       "id": "0c4c",
       "name": "hello",
       "employeeId": "268a",
-      "projectId": "p4d5",
+      "projectId": null,
       "assignedDate": "2024-08-22",
       "deadlineDate": "2024-08-22",
       "status": "Pending"
@@ -595,6 +580,11 @@
       "id": "",
       "title": "HR",
       "date": "2024-08-31T00:00:00.000Z"
+    },
+    {
+      "id": "3849",
+      "title": "any event",
+      "date": "2024-08-28T00:00:00.000Z"
     }
   ]
 }

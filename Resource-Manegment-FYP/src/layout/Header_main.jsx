@@ -54,7 +54,7 @@ const Header = () => {
                 to="/home"
                 className="hover:text-white flex items-center space-x-2"
               >
-                <FaHome /> 
+                <FaHome /> <span>Home</span>
               </Link>
               <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1">Go to Home</span>
             </li>
@@ -63,7 +63,7 @@ const Header = () => {
                 to="/viewemployees"
                 className="hover:text-white flex items-center space-x-2"
               >
-                <FaUsers /> <span></span>
+                <FaUsers /> <span>View Employees</span>
               </Link>
               <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1">View all Employees</span>
             </li>
@@ -72,7 +72,7 @@ const Header = () => {
                 to="/viewprojects"
                 className="hover:text-white flex items-center space-x-2"
               >
-                <FaProjectDiagram /> 
+                <FaProjectDiagram /> <span>All Projects</span>
               </Link>
               <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1">View Projects and Tasks</span>
             </li>
@@ -81,7 +81,7 @@ const Header = () => {
                 to="/calendar"
                 className="hover:text-white flex items-center space-x-2"
               >
-                <FaCalendar /> 
+                <FaCalendar /> <span>Calendar</span>
               </Link>
               <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 hidden group-hover:block bg-black text-white text-xs rounded px-2 py-1">View Calender</span>
             </li>
